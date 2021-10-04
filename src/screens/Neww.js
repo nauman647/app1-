@@ -10,6 +10,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import { Header } from 'react-native-elements';
+
 export default class Neww extends Component {
   constructor(props) {
     super(props);
@@ -23,13 +25,29 @@ export default class Neww extends Component {
       skills: 'react-native',
     };
   }
-
+componentDidMount(){
+  const email=this.props.route.params.email
+  console.log(email)
+  if(email){
+    this.setState({email})
+  }
+}
   render() {
     
     return (
       <View style={{flex: 1, backgroundColor: 'black'}}>
+        <Header backgroundColor={'white'} centerComponent={ <Text
+            style={{
+              fontSize: 23,
+              fontWeight: '800',
+              color: 'black',
+              alignSelf: 'center',
+              // marginTop: 10,
+            }}>
+            Information System
+          </Text>} />
         <View>
-          <Text
+          {/* <Text
             style={{
               fontSize: 23,
               fontWeight: '800',
@@ -38,7 +56,7 @@ export default class Neww extends Component {
               marginTop: 10,
             }}>
             Information System
-          </Text>
+          </Text> */}
         </View>
         <View>
           <View
@@ -70,7 +88,7 @@ export default class Neww extends Component {
               width: '90%',
               padding: '5%',
             }}>
-            <Text style={{fontSize: 23, color: 'white'}}>
+            <Text numberOfLines={1} style={{fontSize: 23, color: 'white'}}>
               Email:{this.state.email}
             </Text>
           </View>

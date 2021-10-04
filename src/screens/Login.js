@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {View, Text, Image,TextInput, TouchableOpacity} from 'react-native';
-
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import {siri, img} from '../assets';
 export default class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {email:'',password:''};
   }
 
   render() {
@@ -27,6 +27,8 @@ export default class Login extends Component {
         <View style={{alignSelf: 'center',}}>
         <View>
             <TextInput
+            // keyboardType='phone-pad'
+            secureTextEntry={true}
               style={{
                
                 borderWidth: 1,
@@ -36,7 +38,11 @@ export default class Login extends Component {
                 margin: 10,
                 color:'white',borderColor:'white'
               }}
-              placeholder="email"></TextInput>
+              value={this.state.email}
+              onChangeText={(text)=>this.setState({email:text})}
+              placeholder="email"/>
+              <MaterialIcons name='email' size={30} color='white'/>
+
           </View>
           <View>
           <View>
@@ -56,7 +62,7 @@ export default class Login extends Component {
         </View>
 
         <View>
-        <TouchableOpacity onPress={()=>this.props.navigation.navigate('Home')}>
+        <TouchableOpacity onPress={()=>this.props.navigation.navigate('Home',{email:this.state.email})}>
             <Text style={{
               fontSize: 27,
               borderRadius:10,

@@ -11,12 +11,12 @@ const Stack = createStackNavigator();
 
 function MyStack() {
   return (
-    <Stack.Navigator initialRouteName='second'>
-      <Stack.Screen name="Home" component={Neww} />
-      <Stack.Screen name="second" component={Second} />
+    <Stack.Navigator initialRouteName='second' screenOptions={{headerShown:false}}>
+      <Stack.Screen name="Home" component={Neww}  />
+      <Stack.Screen name="second" component={Second}   />
 
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen name="Login" component={Login}  />
+      <Stack.Screen name="Signup" component={Signup}   />
       
     </Stack.Navigator>
   );
