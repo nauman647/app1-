@@ -24,37 +24,45 @@ export default class flatScreen extends Component {
         {
           id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
           title: 'banana',
+          price: '5$',
         },
         {
           id: '58694a0f-3da1-471f-bd96-145571e29d72',
           title: 'beaf',
+          price: '7$',
         },
         {
           id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
           title: 'meat',
+          price: '9$',
         },
         {
           id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
           title: 'corn',
+          price: '5$',
         },
         {
           id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
           title: 'noodels',
+          price: '1$',
         },
         {
           id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
           title: 'fish',
+          price: '5$',
         },
         {
           id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
           title: 'grren leaves',
+          price: '3$',
         },
         {
           id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
           title: 'beans',
+          price: '2$',
         },
       ],
-      modalVisible: false,
+      modalVisible: false,price:''
     };
   }
   setModalVisible = visible => {
@@ -63,7 +71,7 @@ export default class flatScreen extends Component {
   renderItem = ({index, item}) => {
     return (
       <TouchableOpacity
-        onPress={() => this.setModalVisible(!this.state.modalVisible)}
+        onPress={() =>{ this.setModalVisible(!this.state.modalVisible),this.setState({price:item.price})}}
         key={index}
         style={{
           flex: 1,
@@ -121,7 +129,7 @@ export default class flatScreen extends Component {
           animated={true}>
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-              <Text style={styles.modalText}> Price:5$</Text>
+              <Text style={styles.modalText}> {`Price:${this.state.price}`}</Text>
               <TouchableOpacity
                 style={[styles.button, styles.buttonClose]}
                 onPress={() => this.setModalVisible(!modalVisible)}>

@@ -7,13 +7,12 @@ export default class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Profile',
+     
       names:' nauman',
-      email: 'nauman"gmail.com',
-      cnic: '611019415652-4',
-      address: 'rawat islamabad',
-      degree: 'mcs',
-      skills: 'react-native',
+      phone: 'nauman"gmail.com',
+      pin: '611019415652-4',
+      class: 'rawat islamabad',
+      
     };
   }
 
@@ -26,7 +25,7 @@ export default class Profile extends Component {
             <Text>
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Home')}>
-                <MaterialIcons name="chevron_left" size={30} color="black" />
+                <MaterialIcons name='arrow-back-ios' size={30} color="black" />
               </TouchableOpacity>
             </Text>
           }
@@ -37,7 +36,7 @@ export default class Profile extends Component {
                 fontWeight: '800',
                 color: 'black',
               }}>
-              {this.state.name}
+             Profile
             </Text>
           }
         />
@@ -46,6 +45,7 @@ export default class Profile extends Component {
           style={{
             flex: 1,
             alignItems: 'center',
+            marginLeft:13,
 
             width: '90%',
           }}>
