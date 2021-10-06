@@ -4,9 +4,14 @@ import {siri, s} from '../assets';
 export default class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {name:'...',email:'...',skilss:'...',cnic:'....',address:'...'};
   }
-
+onparam(){
+  const{name,email,skilss,cnic,address}=this.state
+  this.props.navigation.navigate('Home',{name,email,skilss,cnic,address})
+  
+  
+}
   render() {
     return (
       <View style={{flex: 1, backgroundColor: '#239b56'}}>
@@ -39,10 +44,12 @@ export default class Login extends Component {
 
 
               }}
-              placeholder="yourname"></TextInput>
+              onChangeText={(txt)=>this.setState({name:txt})}
+              placeholder="yourname"/>
           </View>
           <View>
             <TextInput
+              onChangeText={(txt)=>this.setState({email:txt})}
               style={{
                
                 borderWidth: 1,
@@ -52,10 +59,11 @@ export default class Login extends Component {
                 margin: 10,
                 color:'white',borderColor:'white'
               }}
-              placeholder="email"></TextInput>
+              placeholder="email"/>
           </View>
           <View>
             <TextInput
+              onChangeText={(txt)=>this.setState({skilss:txt})}
               style={{
           
                 borderWidth: 1,
@@ -65,10 +73,11 @@ export default class Login extends Component {
                 margin: 10,
                 color:'white',borderColor:'white'
               }}
-              placeholder="skills"></TextInput>
+              placeholder="skills"/>
           </View>
           <View>
             <TextInput
+              onChangeText={(txt)=>this.setState({cnic:txt})}
               style={{
              
                 borderWidth: 1,
@@ -78,10 +87,11 @@ export default class Login extends Component {
                 margin: 10,
                 color:'white',borderColor:'white'
               }}
-              placeholder="cnic"></TextInput>
+              placeholder="cnic"/>
           </View>
           <View>
             <TextInput
+              onChangeText={(txt)=>this.setState({address:txt})}
               style={{
                 
                 borderWidth: 1,
@@ -91,12 +101,12 @@ export default class Login extends Component {
                 margin: 10,
                 color:'white',borderColor:'white'
               }}
-              placeholder="address"></TextInput>
+              placeholder="address"/>
           </View>
         </View>
         <View>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('Home')}>
+            onPress={() => this.onparam()}>
             <Text
               style={{
                 fontSize: 27,

@@ -7,6 +7,7 @@ import Second from '../screens/Second';
 import Login from '../screens/Login';
 import Signup from '../screens/Signup';
 import flatScreen from '../screens/flatScreen';
+import Profile from '../screens/Profile';
 
 const Stack = createStackNavigator();
 
@@ -19,7 +20,7 @@ function MyStack() {
       <Stack.Screen name="Login" component={Login}  />
       <Stack.Screen name="Signup" component={Signup}   />
       <Stack.Screen name="flatScreen" component={flatScreen}/>
-      
+      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   );
 }

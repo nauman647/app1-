@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import Main from './src/navigation/MainNav';
+import Sec from './src/navigation/Second-nav';
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +14,7 @@ export default class App extends Component {
     return (
       <View style={{flex:1}}>
       <NavigationContainer >
-       <Main/>
+       <Sec/>
       </NavigationContainer>
       </View>
     );
